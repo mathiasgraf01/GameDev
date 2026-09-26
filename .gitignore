@@ -1,3 +1,7 @@
 .venv/
 __pycache__/
 .pytest_cache/
+
+# T-004: Laufzeit-Artefakte (deterministisch, nicht committen)
+saves/
+reports/

@@ -18,12 +18,17 @@
 
 ## Akzeptanzkriterien
 
-- [ ] Spiel startet headless und mit Display gegen die echten `world/` + `balance/`-Dateien, ohne dass eine Zeile Content im Code hartkodet ist
-- [ ] Alle 6 Fähigkeiten/Keys aus dem Graph werden korrekt an ihren `granted_at`-Knoten vergeben und öffnen exakt ihre Kanten (Test)
-- [ ] Save/Load: nach Reload sind Fähigkeit, Keys, Boss-State identisch (Test)
-- [ ] Headless: `--seed 42 --runs 3` liefert 3 deterministische JSON-Reports; zweiter Lauf mit gleichem Seed → byte-identische Reports
-- [ ] Full-Suite (`pytest tests/`) grün headless vor Merge — bestehende Tests (T-002, T-003) dürfen nicht brechen
+- [x] Spiel startet headless und mit Display gegen die echten `world/` + `balance/`-Dateien, ohne dass eine Zeile Content im Code hartkodet ist (Display: 120 Ticks unter `SDL_VIDEODRIVER=dummy`, node=hub_01)
+- [x] Alle 6 Fähigkeiten/Keys aus dem Graph werden korrekt an ihren `granted_at`-Knoten vergeben und öffnen exakt ihre Kanten (`test_all_six_gating_ids_granted_at_their_nodes`, `test_each_gating_id_opens_exactly_its_edges`)
+- [x] Save/Load: nach Reload sind Fähigkeit, Keys, Boss-State identisch (`test_save_load_roundtrip_preserves_state`)
+- [x] Headless: `--seed 42 --runs 3` liefert 3 deterministische JSON-Reports; zweiter Lauf mit gleichem Seed → byte-identische Reports (sha256-verifiziert, `reports/42/*.json`; Runs unterscheiden sich über `run_id`, pro (seed, run_id) reproduzierbar — `test_headless_deterministic_same_seed_byte_identical`)
+- [x] Full-Suite (`pytest tests/`) grün headless vor Merge — **48 passed in 0.64s** (13 World + 20 Balance + 15 Engine), bestehende Tests nicht gebrochen
 
 ## Definition of Done
 
 Alle Boxen grün + QA bestätigt den Headless-Lauf (Seed-Reproduzierbarkeit) + Screenshot/Log als Beweis im Ticket. Max. 2 Korrekturrunden, danach Scope-Kürzung (Kamera-Lookahead und Parallax sind die Kürzungs-Kandidaten).
+
+## Abgabe-Log (coder)
+- **Engine:** `engine/{constants,data,drops,player,enemies,navigation,rooms,savegame,headless,game}.py` + `main.py`. Daten-Layer validiert beim Start gegen alle 6 Draft-07-Schemas; Gating bidirektional über `requires`; Boss-Räume als Siegel (lore.md §2: Ausgang erst nach Sieg); Drop-Wurf mit guaranteed-Boss-Tabelle und Float-Rest-Fangnetz.
+- **Headless-Vertrag für T-006:** `python main.py --headless --seed N --runs M` → Reports unter `reports/<seed>/<run_id>.json`, Pflichtfelder exakt nach QA-Schema, Extras (`level_reached`, `lumen_earned`, `nodes_visited`) erlaubt.
+- **Beweis (deterministisch):** Seed 42, Runs 1–3: `death@ec_05` (289.0s), `death@ec_05` (513.5s), `death@ag_07` (143.5s); zweiter Lauf byte-identisch (sha256 OK).
