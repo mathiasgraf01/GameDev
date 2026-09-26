@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "game": "Lumenfall",
+    "ticket": "T-003",
+    "owner": "systems",
+    "version": "1.0",
+    "notes": "Affix-Rolls: Wert wird uniform zwischen min_pct und max_pct des Basiswerts der jeweiligen Stat gezogen (Basiswert = stat_curves.json + Item-base_stats). Sanity-Grenze laut T-003: kein Affix außerhalb ±100 %."
+  },
+  "affixes": [
+    {
+      "id": "affix_vitality",
+      "name_de": "Vitalität",
+      "stat_key": "max_hp",
+      "min_pct": 5,
+      "max_pct": 20,
+      "description": "Erhöht die maximalen Lebenspunkte."
+    },
+    {
+      "id": "affix_ironhide",
+      "name_de": "Eiserner Panzer",
+      "stat_key": "defense",
+      "min_pct": 10,
+      "max_pct": 35,
+      "description": "Erhöht die Verteidigung."
+    },
+    {
+      "id": "affix_keen_edge",
+      "name_de": "Scharfe Klinge",
+      "stat_key": "attack",
+      "min_pct": 8,
+      "max_pct": 25,
+      "description": "Erhöht den Basisangriff."
+    },
+    {
+      "id": "affix_war_might",
+      "name_de": "Kriegsmacht",
+      "stat_key": "attack",
+      "min_pct": 15,
+      "max_pct": 40,
+      "description": "Starker Angriffsbonus; bevorzugt auf rare/epic Items."
+    },
+    {
+      "id": "affix_swift_feet",
+      "name_de": "Flinke Füße",
+      "stat_key": "speed",
+      "min_pct": 5,
+      "max_pct": 15,
+      "description": "Erhöht die Bewegungsgeschwindigkeit."
+    },
+    {
+      "id": "affix_wind_step",
+      "name_de": "Windlauf",
+      "stat_key": "speed",
+      "min_pct": 10,
+      "max_pct": 25,
+      "description": "Hoher Geschwindigkeitsbonus; bevorzugt auf rare/epic Items."
+    },
+    {
+      "id": "affix_precise_strike",
+      "name_de": "Präziser Schlag",
+      "stat_key": "crit_chance",
+      "min_pct": 10,
+      "max_pct": 30,
+      "description": "Erhöht die Chance auf kritische Treffer (Prozentpunkte)."
+    },
+    {
+      "id": "affix_deadly_focus",
+      "name_de": "Tödliche Konzentration",
+      "stat_key": "crit_damage",
+      "min_pct": 10,
+      "max_pct": 35,
+      "description": "Erhöht den Schaden kritischer Treffer."
+    },
+    {
+      "id": "affix_lumen_hunger",
+      "name_de": "Lumenhunger",
+      "stat_key": "lumen_gain",
+      "min_pct": 5,
+      "max_pct": 15,
+      "description": "Erhöht den Lumen-Ertrag — stärkt die Meta-Schleife (GDD-Pillar 1)."
+    },
+    {
+      "id": "affix_ember_blood",
+      "name_de": "Glutblut",
+      "stat_key": "max_hp",
+      "min_pct": -10,
+      "max_pct": 5,
+      "description": "Leichter HP-Verlust gegen erhöhten Lumen-Ertrag (Trade-off-Affix für Builds)."
+    },
+    {
+      "id": "affix_glass_blade",
+      "name_de": "Glasklinge",
+      "stat_key": "attack",
+      "min_pct": 20,
+      "max_pct": 50,
+      "description": "Sehr hoher Angriffsbonus; bevorzugt auf epic Items."
+    },
+    {
+      "id": "affix_stone_skin",
+      "name_de": "Steinhaut",
+      "stat_key": "defense",
+      "min_pct": 20,
+      "max_pct": 50,
+      "description": "Hoher Verteidigungsbonus; bevorzugt auf rare/epic Items."
+    },
+    {
+      "id": "affix_shadow_step",
+      "name_de": "Schattenritt",
+      "stat_key": "speed",
+      "min_pct": -15,
+      "max_pct": 0,
+      "description": "Verlangsamt, aber erhöht Lumen-Ertrag (Trade-off-Affix; Pairing mit affix_lumen_hunger)."
+    },
+    {
+      "id": "affix_omen",
+      "name_de": "Omen",
+      "stat_key": "crit_chance",
+      "min_pct": -10,
+      "max_pct": 5,
+      "description": "Leichter Krit-Verlust gegen erhöhten Grundschaden (Trade-off-Affix)."
+    }
+  ]
+}

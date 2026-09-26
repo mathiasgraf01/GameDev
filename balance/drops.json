@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "game": "Lumenfall",
+    "ticket": "T-003",
+    "owner": "systems",
+    "version": "1.0",
+    "notes": "Drop-Tabelle pro Biome (5) und Boss (2). Wahrscheinlichkeiten pro Tabelle <= 1.0; der Rest ist 'kein Drop' (Beute-Ereignis zahlt nur Lumen). Boss-Tabellen sind guaranteed=true: genau ein Eintrag wird renormiert gewuerfelt — Bosse belohnen immer, kein Run geht durch Pech verloren (Roguelike-Fairness). Alle 40 Items aus items.json sind in mindestens einer Tabelle erreichbar."
+  },
+  "tables": [
+    {
+      "source_id": "lumen_well",
+      "source_type": "biome",
+      "guaranteed": false,
+      "entries": [
+        {"item_id": "item_a_leather_vest", "probability": 0.08},
+        {"item_id": "item_a_rust_plate", "probability": 0.04},
+        {"item_id": "item_w_bone_club", "probability": 0.06},
+        {"item_id": "item_w_rust_sword", "probability": 0.05},
+        {"item_id": "item_w_iron_shortsword", "probability": 0.04},
+        {"item_id": "item_w_lumen_daggers", "probability": 0.05},
+        {"item_id": "item_a_lumen_robes", "probability": 0.07},
+        {"item_id": "item_z_lumen_charm", "probability": 0.08},
+        {"item_id": "item_z_bone_ring", "probability": 0.05},
+        {"item_id": "item_z_wind_boots", "probability": 0.05},
+        {"item_id": "item_w_glowing_saber", "probability": 0.03},
+        {"item_id": "item_a_glowing_cuirass", "probability": 0.02},
+        {"item_id": "item_z_glowing_eye", "probability": 0.02},
+        {"item_id": "item_z_wind_feather", "probability": 0.02},
+        {"item_id": "item_w_lumen_reaver", "probability": 0.01},
+        {"item_id": "item_a_lumen_aurora", "probability": 0.01},
+        {"item_id": "item_z_lumen_core", "probability": 0.01}
+      ]
+    },
+    {
+      "source_id": "aschen_wald",
+      "source_type": "biome",
+      "guaranteed": false,
+      "entries": [
+        {"item_id": "item_w_ashen_dagger", "probability": 0.08},
+        {"item_id": "item_w_spore_mace", "probability": 0.06},
+        {"item_id": "item_a_ashen_cloak", "probability": 0.07},
+        {"item_id": "item_a_spore_helm", "probability": 0.05},
+        {"item_id": "item_z_ashen_amulet", "probability": 0.06},
+        {"item_id": "item_w_ashen_greatsword", "probability": 0.03}
+      ]
+    },
+    {
+      "source_id": "glut_hoehlen",
+      "source_type": "biome",
+      "guaranteed": false,
+      "entries": [
+        {"item_id": "item_w_ember_knife", "probability": 0.08},
+        {"item_id": "item_a_ember_wrap", "probability": 0.07},
+        {"item_id": "item_z_ember_stone", "probability": 0.06},
+        {"item_id": "item_w_cinder_blade", "probability": 0.04},
+        {"item_id": "item_a_cinder_plate", "probability": 0.03},
+        {"item_id": "item_z_cinder_heart", "probability": 0.02}
+      ]
+    },
+    {
+      "source_id": "frost_hallen",
+      "source_type": "biome",
+      "guaranteed": false,
+      "entries": [
+        {"item_id": "item_w_frost_pike", "probability": 0.08},
+        {"item_id": "item_a_frost_mail", "probability": 0.07},
+        {"item_id": "item_z_frost_pendant", "probability": 0.06},
+        {"item_id": "item_w_frostfang", "probability": 0.04},
+        {"item_id": "item_a_frostguard", "probability": 0.03}
+      ]
+    },
+    {
+      "source_id": "hohle_tiefen",
+      "source_type": "biome",
+      "guaranteed": false,
+      "entries": [
+        {"item_id": "item_w_cracked_blade", "probability": 0.08},
+        {"item_id": "item_a_deep_hide", "probability": 0.07},
+        {"item_id": "item_z_deep_idol", "probability": 0.06},
+        {"item_id": "item_w_hollow_edge", "probability": 0.02}
+      ]
+    },
+    {
+      "source_id": "boss_aschen_waechter",
+      "source_type": "boss",
+      "guaranteed": true,
+      "entries": [
+        {"item_id": "item_w_dawnbreaker", "probability": 0.65},
+        {"item_id": "item_w_ashen_greatsword", "probability": 0.20},
+        {"item_id": "item_w_lumen_reaver", "probability": 0.15}
+      ]
+    },
+    {
+      "source_id": "boss_frost_koenigin",
+      "source_type": "boss",
+      "guaranteed": true,
+      "entries": [
+        {"item_id": "item_z_ice_crown", "probability": 0.65},
+        {"item_id": "item_a_frostguard", "probability": 0.20},
+        {"item_id": "item_z_lumen_core", "probability": 0.15}
+      ]
+    }
+  ]
+}

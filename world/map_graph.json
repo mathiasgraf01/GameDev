@@ -1,0 +1,206 @@
+{
+  "meta": {
+    "game": "Lumenfall",
+    "version": "1.0",
+    "owner": "worldbuilder",
+    "ticket": "T-002",
+    "start_node": "hub_01",
+    "final_node": "hd_05",
+    "edge_semantics": "Alle Kanten sind bidirektional begehbar. 'requires' = Fähigkeit-ID, die der Spieler besitzen muss, um die Kante in beiden Richtungen zu passieren; null = offen."
+  },
+  "abilities": [
+    {
+      "id": "ability_double_jump",
+      "name_de": "Doppelhüpfen",
+      "type": "movement",
+      "granted_at": "ag_03",
+      "description": "Zweiter Sprung in der Luft. Öffnet den Kronenpfad im Aschewald."
+    },
+    {
+      "id": "ability_dash",
+      "name_de": "Glutdash",
+      "type": "movement",
+      "granted_at": "ag_05",
+      "description": "Kurzer, schneller Sprung nach vorn. Durchbricht Dornen und schmale Lücken."
+    },
+    {
+      "id": "ability_wall_slide",
+      "name_de": "Wandgleiten",
+      "type": "movement",
+      "granted_at": "ec_02",
+      "description": "Gleiten an Wänden, um Klammen und Abgründe zu überwinden."
+    },
+    {
+      "id": "ability_light_step",
+      "name_de": "Lichtschritt",
+      "type": "movement",
+      "granted_at": "hd_02",
+      "description": "Gehen auf Lichtplattformen und durch dunkle Schächte, ohne zu fallen."
+    },
+    {
+      "id": "key_lumen_shard",
+      "name_de": "Lumen-Splitter",
+      "type": "key",
+      "granted_at": "ag_08",
+      "description": "Schlüssel 1: Öffnet das Frosttor im Lumenbrunnen und damit die Frosthallen."
+    },
+    {
+      "id": "key_ember_key",
+      "name_de": "Glutschlüssel",
+      "type": "key",
+      "granted_at": "ec_04",
+      "description": "Schlüssel 2: Öffnet den Kernschacht in den Hohlen Tiefen."
+    }
+  ],
+  "biomes": [
+    {
+      "id": "lumen_well",
+      "name_de": "Lumenbrunnen",
+      "is_hub": true,
+      "visual_identity": "Zentraler Brunnen-Schacht aus weißem Stein, umgeben von schwebenden Lichtpartikeln. Meta-Ort: Lumen-Währung und Unlock-Baum.",
+      "palette_hint": ["#f5f1e6", "#c9d8e8", "#7fa8c9", "#2b3a4a"]
+    },
+    {
+      "id": "aschen_wald",
+      "name_de": "Aschewald",
+      "is_hub": false,
+      "visual_identity": "Dunkler Wald aus toten Eichen mit leuchtenden Sporen. Erste Erkundungszone: Kronenpfade über dem Boden, Wurzelkeller darunter.",
+      "palette_hint": ["#1a2418", "#3d5c3a", "#9fd670", "#e8f5c8"]
+    },
+    {
+      "id": "glut_hoehlen",
+      "name_de": "Gluthöhlen",
+      "is_hub": false,
+      "visual_identity": "Vulkanische Kammern mit Lavafällen und Klammbrücken. Schmiedehalle als Herzstück; Hitze-Distortion in der Luft.",
+      "palette_hint": ["#241010", "#8c3b2e", "#f28c38", "#ffd9a0"]
+    },
+    {
+      "id": "frost_hallen",
+      "name_de": "Frosthallen",
+      "is_hub": false,
+      "visual_identity": "Gefrorene Palasthallen mit spiegelnden Kuppeln und Eiskathedrale. Stille, klare Linien, Lichtbrechung auf Eisflächen.",
+      "palette_hint": ["#0e1c26", "#3a7ca5", "#9fd8ef", "#f0fbff"]
+    },
+    {
+      "id": "hohle_tiefen",
+      "name_de": "Hohle Tiefen",
+      "is_hub": false,
+      "visual_identity": "Der Kernschacht unter der Welt: Lumenadern leuchten in purpurnem Gestein. Finale Zone um den Lumenkern.",
+      "palette_hint": ["#140f24", "#4a3d78", "#9b7fd4", "#ffe9a0"]
+    }
+  ],
+  "npcs": [
+    {
+      "id": "leuchtmutter",
+      "name_de": "Die Leuchtmutter",
+      "node": "hub_02",
+      "role": "Hüterin des Lumen-Schreins. Erklärt Meta-Fortschritt und Lumen-Währung."
+    },
+    {
+      "id": "wurzelgeist",
+      "name_de": "Wurzelgeist",
+      "node": "ag_05",
+      "role": "Geist des Aschewalds. Verleiht den Glutdash und warnt vor dem Aschewächter."
+    },
+    {
+      "id": "korin",
+      "name_de": "Glutbarde Korrin",
+      "node": "ec_04",
+      "role": "Letzter Schmied der Gluthöhlen. Verwahrt den Glutschlüssel."
+    },
+    {
+      "id": "der_stumme",
+      "name_de": "Der Stumme",
+      "node": "hd_03",
+      "role": "Schatten in der Stillen Kammer. Zeigt Visionen des Lumenkerns, spricht nie."
+    }
+  ],
+  "bosses": [
+    {
+      "id": "boss_aschen_waechter",
+      "name_de": "Aschewächter",
+      "node": "ag_07",
+      "gates_cluster_biom": "glut_hoehlen"
+    },
+    {
+      "id": "boss_frost_koenigin",
+      "name_de": "Frostkönigin",
+      "node": "fh_05",
+      "gates_cluster_biom": "hohle_tiefen"
+    }
+  ],
+  "nodes": [
+    {"id": "hub_01", "biome": "lumen_well", "name_de": "Lumenbrunnen", "kind": "start", "boss_id": null, "grants": [], "npc_id": null},
+    {"id": "hub_02", "biome": "lumen_well", "name_de": "Lumen-Schrein", "kind": "shrine", "boss_id": null, "grants": [], "npc_id": "leuchtmutter"},
+    {"id": "hub_03", "biome": "lumen_well", "name_de": "Wurzelportal", "kind": "door", "boss_id": null, "grants": [], "npc_id": null},
+    {"id": "hub_04", "biome": "lumen_well", "name_de": "Frosttor", "kind": "door", "boss_id": null, "grants": [], "npc_id": null},
+    {"id": "hub_05", "biome": "lumen_well", "name_de": "Tiefer Brunnen", "kind": "secret", "boss_id": null, "grants": [], "npc_id": null},
+
+    {"id": "ag_01", "biome": "aschen_wald", "name_de": "Eingangswiese", "kind": "room", "boss_id": null, "grants": [], "npc_id": null},
+    {"id": "ag_02", "biome": "aschen_wald", "name_de": "Sporenlichtung", "kind": "room", "boss_id": null, "grants": [], "npc_id": null},
+    {"id": "ag_03", "biome": "aschen_wald", "name_de": "Hohler Eichenbaum", "kind": "room", "boss_id": null, "grants": ["ability_double_jump"], "npc_id": null},
+    {"id": "ag_04", "biome": "aschen_wald", "name_de": "Kronenpfad", "kind": "room", "boss_id": null, "grants": [], "npc_id": null},
+    {"id": "ag_05", "biome": "aschen_wald", "name_de": "Wurzelkeller", "kind": "room", "boss_id": null, "grants": ["ability_dash"], "npc_id": "wurzelgeist"},
+    {"id": "ag_06", "biome": "aschen_wald", "name_de": "Dornlabyrinth", "kind": "room", "boss_id": null, "grants": [], "npc_id": null},
+    {"id": "ag_07", "biome": "aschen_wald", "name_de": "Arena des Aschewächters", "kind": "boss_room", "boss_id": "boss_aschen_waechter", "grants": [], "npc_id": null},
+    {"id": "ag_08", "biome": "aschen_wald", "name_de": "Lichtquelle", "kind": "room", "boss_id": null, "grants": ["key_lumen_shard"], "npc_id": null},
+    {"id": "ag_09", "biome": "aschen_wald", "name_de": "Verlorene Lichtung", "kind": "secret", "boss_id": null, "grants": [], "npc_id": null},
+
+    {"id": "ec_01", "biome": "glut_hoehlen", "name_de": "Schmelzgang", "kind": "room", "boss_id": null, "grants": [], "npc_id": null},
+    {"id": "ec_02", "biome": "glut_hoehlen", "name_de": "Lavafall", "kind": "room", "boss_id": null, "grants": ["ability_wall_slide"], "npc_id": null},
+    {"id": "ec_03", "biome": "glut_hoehlen", "name_de": "Klammbrücke", "kind": "room", "boss_id": null, "grants": [], "npc_id": null},
+    {"id": "ec_04", "biome": "glut_hoehlen", "name_de": "Schmiedehalle", "kind": "room", "boss_id": null, "grants": ["key_ember_key"], "npc_id": "korin"},
+    {"id": "ec_05", "biome": "glut_hoehlen", "name_de": "Glutkern-Vorhalle", "kind": "room", "boss_id": null, "grants": [], "npc_id": null},
+    {"id": "ec_06", "biome": "glut_hoehlen", "name_de": "Glutsee", "kind": "secret", "boss_id": null, "grants": [], "npc_id": null},
+
+    {"id": "fh_01", "biome": "frost_hallen", "name_de": "Eisportal", "kind": "room", "boss_id": null, "grants": [], "npc_id": null},
+    {"id": "fh_02", "biome": "frost_hallen", "name_de": "Gefrorene Galerie", "kind": "room", "boss_id": null, "grants": [], "npc_id": null},
+    {"id": "fh_03", "biome": "frost_hallen", "name_de": "Spiegelte Kuppel", "kind": "room", "boss_id": null, "grants": [], "npc_id": null},
+    {"id": "fh_04", "biome": "frost_hallen", "name_de": "Eiskathedrale", "kind": "room", "boss_id": null, "grants": [], "npc_id": null},
+    {"id": "fh_05", "biome": "frost_hallen", "name_de": "Arena der Frostkönigin", "kind": "boss_room", "boss_id": "boss_frost_koenigin", "grants": [], "npc_id": null},
+    {"id": "fh_06", "biome": "frost_hallen", "name_de": "Eisgrotte", "kind": "secret", "boss_id": null, "grants": [], "npc_id": null},
+
+    {"id": "hd_01", "biome": "hohle_tiefen", "name_de": "Kernschacht", "kind": "room", "boss_id": null, "grants": [], "npc_id": null},
+    {"id": "hd_02", "biome": "hohle_tiefen", "name_de": "Lumenadern", "kind": "room", "boss_id": null, "grants": ["ability_light_step"], "npc_id": null},
+    {"id": "hd_03", "biome": "hohle_tiefen", "name_de": "Stille Kammer", "kind": "room", "boss_id": null, "grants": [], "npc_id": "der_stumme"},
+    {"id": "hd_04", "biome": "hohle_tiefen", "name_de": "Lichtbrücke", "kind": "room", "boss_id": null, "grants": [], "npc_id": null},
+    {"id": "hd_05", "biome": "hohle_tiefen", "name_de": "Der Lumenkern", "kind": "goal", "boss_id": null, "grants": [], "npc_id": null}
+  ],
+  "edges": [
+    {"from": "hub_01", "to": "hub_02", "requires": null},
+    {"from": "hub_01", "to": "hub_03", "requires": null},
+    {"from": "hub_01", "to": "hub_04", "requires": null},
+    {"from": "hub_01", "to": "hub_05", "requires": null},
+
+    {"from": "hub_03", "to": "ag_01", "requires": null},
+    {"from": "ag_01", "to": "ag_02", "requires": null},
+    {"from": "ag_01", "to": "ag_05", "requires": null},
+    {"from": "ag_02", "to": "ag_03", "requires": null},
+    {"from": "ag_03", "to": "ag_04", "requires": "ability_double_jump"},
+    {"from": "ag_04", "to": "ag_08", "requires": null},
+    {"from": "ag_08", "to": "ag_09", "requires": "ability_dash"},
+    {"from": "ag_05", "to": "ag_06", "requires": "ability_dash"},
+    {"from": "ag_06", "to": "ag_07", "requires": null},
+
+    {"from": "ag_07", "to": "ec_01", "requires": null},
+    {"from": "ec_01", "to": "ec_02", "requires": null},
+    {"from": "ec_02", "to": "ec_03", "requires": "ability_wall_slide"},
+    {"from": "ec_03", "to": "ec_04", "requires": null},
+    {"from": "ec_04", "to": "ec_05", "requires": null},
+    {"from": "ec_03", "to": "ec_06", "requires": null},
+
+    {"from": "hub_04", "to": "fh_01", "requires": "key_lumen_shard"},
+    {"from": "fh_01", "to": "fh_02", "requires": null},
+    {"from": "fh_02", "to": "fh_03", "requires": null},
+    {"from": "fh_02", "to": "fh_06", "requires": "ability_wall_slide"},
+    {"from": "fh_03", "to": "fh_04", "requires": null},
+    {"from": "fh_04", "to": "fh_05", "requires": null},
+
+    {"from": "fh_05", "to": "hd_01", "requires": "key_ember_key"},
+    {"from": "hd_01", "to": "hd_02", "requires": null},
+    {"from": "hub_05", "to": "hd_03", "requires": "ability_light_step"},
+    {"from": "hd_02", "to": "hd_03", "requires": null},
+    {"from": "hd_03", "to": "hd_04", "requires": "ability_light_step"},
+    {"from": "hd_04", "to": "hd_05", "requires": null}
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lumenfall/balance/difficulty.schema.json",
+  "title": "Lumenfall — difficulty.json (T-003)",
+  "type": "object",
+  "required": ["meta", "run_depths"],
+  "properties": {
+    "meta": {"type": "object"},
+    "run_depths": {
+      "type": "array",
+      "minItems": 5,
+      "description": "Run-Tiefen 1-5 müssen vollständig sein; Multiplikatoren monoton nicht-fallend (geprüft in tests/test_balance.py).",
+      "items": {
+        "type": "object",
+        "required": ["depth", "hp_multiplier", "damage_multiplier", "xp_reward_multiplier"],
+        "properties": {
+          "depth": {"type": "integer", "minimum": 1, "maximum": 5},
+          "hp_multiplier": {"type": "number", "minimum": 1.0, "description": "Multiplikator auf Feind-HP."},
+          "damage_multiplier": {"type": "number", "minimum": 1.0, "description": "Multiplikator auf Feind-Schaden."},
+          "xp_reward_multiplier": {"type": "number", "minimum": 1.0, "description": "Belohnung skaliert bewusst langsamer als die Gefahr (GDD-Pillar 1)."}
+        }
+      }
+    }
+  }
+}

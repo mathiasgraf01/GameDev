@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lumenfall/balance/affixes.schema.json",
+  "title": "Lumenfall — affixes.json (T-003)",
+  "type": "object",
+  "required": ["meta", "affixes"],
+  "properties": {
+    "meta": {"type": "object"},
+    "affixes": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["id", "name_de", "stat_key", "min_pct", "max_pct"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^affix_[a-z0-9]+(_[a-z0-9]+)*$"},
+          "name_de": {"type": "string", "minLength": 2},
+          "stat_key": {
+            "enum": ["max_hp", "attack", "defense", "speed", "crit_chance", "crit_damage", "lumen_gain"],
+            "description": "Muss zur Key-Menge von stats.schema.json gehören."
+          },
+          "min_pct": {
+            "type": "number",
+            "minimum": -100,
+            "maximum": 100,
+            "description": "Untere Grenze in % des Basiswerts der Stat. Sanity-Grenze: >= -100."
+          },
+          "max_pct": {
+            "type": "number",
+            "minimum": -100,
+            "maximum": 100,
+            "description": "Obere Grenze in % des Basiswerts der Stat. Sanity-Grenze: <= +100."
+          }
+        }
+      }
+    }
+  }
+}

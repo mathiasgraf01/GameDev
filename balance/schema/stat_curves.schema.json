@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lumenfall/balance/stat_curves.schema.json",
+  "title": "Lumenfall — stat_curves.json (T-003)",
+  "type": "object",
+  "required": ["meta", "levels"],
+  "properties": {
+    "meta": {"type": "object"},
+    "levels": {
+      "type": "array",
+      "minItems": 20,
+      "description": "Level 1-20 vollständig. xp_to_next und base_attack monoton steigend, kein Sprung > 50 % zwischen benachbarten Levels (geprüft in tests/test_balance.py).",
+      "items": {
+        "type": "object",
+        "required": ["level", "xp_to_next", "base_hp", "base_attack", "base_defense"],
+        "properties": {
+          "level": {"type": "integer", "minimum": 1, "maximum": 20},
+          "xp_to_next": {"type": "number", "exclusiveMinimum": 0, "description": "XP für das nächste Level."},
+          "base_hp": {"type": "number", "exclusiveMinimum": 0, "description": "Spieler-Basis-HP ohne Items/Affixe."},
+          "base_attack": {"type": "number", "exclusiveMinimum": 0, "description": "Spieler-Basisangriff (Damage-Kurve)."},
+          "base_defense": {"type": "number", "minimum": 0}
+        }
+      }
+    }
+  }
+}

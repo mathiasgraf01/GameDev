@@ -1,0 +1,151 @@
+{
+  "meta": {
+    "game": "Lumenfall",
+    "ticket": "T-003",
+    "owner": "systems",
+    "version": "1.0",
+    "notes": "XP-Kurve: 40 * 1.1^(level-1) — ~10 %/Level, kein Sprung > 50 %. Damage-Kurve (base_attack): 10 * 1.08^(level-1). Runs sind 15-20 Min (GDD-Pillar 1); ein Run erreicht typisch Level 8-12."
+  },
+  "levels": [
+    {
+      "level": 1,
+      "xp_to_next": 40,
+      "base_hp": 100,
+      "base_attack": 10,
+      "base_defense": 2
+    },
+    {
+      "level": 2,
+      "xp_to_next": 44,
+      "base_hp": 108,
+      "base_attack": 11,
+      "base_defense": 3
+    },
+    {
+      "level": 3,
+      "xp_to_next": 48,
+      "base_hp": 116,
+      "base_attack": 12,
+      "base_defense": 4
+    },
+    {
+      "level": 4,
+      "xp_to_next": 53,
+      "base_hp": 124,
+      "base_attack": 13,
+      "base_defense": 5
+    },
+    {
+      "level": 5,
+      "xp_to_next": 59,
+      "base_hp": 132,
+      "base_attack": 14,
+      "base_defense": 6
+    },
+    {
+      "level": 6,
+      "xp_to_next": 64,
+      "base_hp": 140,
+      "base_attack": 15,
+      "base_defense": 7
+    },
+    {
+      "level": 7,
+      "xp_to_next": 71,
+      "base_hp": 148,
+      "base_attack": 16,
+      "base_defense": 8
+    },
+    {
+      "level": 8,
+      "xp_to_next": 78,
+      "base_hp": 156,
+      "base_attack": 17,
+      "base_defense": 9
+    },
+    {
+      "level": 9,
+      "xp_to_next": 86,
+      "base_hp": 164,
+      "base_attack": 19,
+      "base_defense": 10
+    },
+    {
+      "level": 10,
+      "xp_to_next": 94,
+      "base_hp": 172,
+      "base_attack": 20,
+      "base_defense": 11
+    },
+    {
+      "level": 11,
+      "xp_to_next": 104,
+      "base_hp": 180,
+      "base_attack": 22,
+      "base_defense": 12
+    },
+    {
+      "level": 12,
+      "xp_to_next": 114,
+      "base_hp": 188,
+      "base_attack": 23,
+      "base_defense": 13
+    },
+    {
+      "level": 13,
+      "xp_to_next": 126,
+      "base_hp": 196,
+      "base_attack": 25,
+      "base_defense": 14
+    },
+    {
+      "level": 14,
+      "xp_to_next": 138,
+      "base_hp": 204,
+      "base_attack": 27,
+      "base_defense": 15
+    },
+    {
+      "level": 15,
+      "xp_to_next": 152,
+      "base_hp": 212,
+      "base_attack": 29,
+      "base_defense": 16
+    },
+    {
+      "level": 16,
+      "xp_to_next": 167,
+      "base_hp": 220,
+      "base_attack": 32,
+      "base_defense": 17
+    },
+    {
+      "level": 17,
+      "xp_to_next": 184,
+      "base_hp": 228,
+      "base_attack": 34,
+      "base_defense": 18
+    },
+    {
+      "level": 18,
+      "xp_to_next": 202,
+      "base_hp": 236,
+      "base_attack": 37,
+      "base_defense": 19
+    },
+    {
+      "level": 19,
+      "xp_to_next": 222,
+      "base_hp": 244,
+      "base_attack": 40,
+      "base_defense": 20
+    },
+    {
+      "level": 20,
+      "xp_to_next": 245,
+      "base_hp": 252,
+      "base_attack": 43,
+      "base_defense": 21
+    }
+  ]
+}

@@ -1,0 +1,568 @@
+{
+  "meta": {
+    "game": "Lumenfall",
+    "ticket": "T-003",
+    "owner": "systems",
+    "version": "1.0",
+    "notes": "40 Items (Waffe/Rüstung/Accessoire). Rarity-Verteilung: {'common': 24, 'uncommon': 10, 'rare': 4, 'epic': 2} — hält sich an die T-003-Caps 60/25/10/5 %. Affix-Anzahl pro Rarity: common 0-1, uncommon 1-2, rare 2-3, epic 3-4. source = Biome-/Boss-ID aus world/map_graph.json oder 'any'."
+  },
+  "items": [
+    {
+      "id": "item_w_ashen_dagger",
+      "name_de": "Ascheklinge",
+      "slot": "weapon",
+      "rarity": "common",
+      "base_stats": {
+        "attack": 3
+      },
+      "source": "aschen_wald",
+      "affixes": [],
+      "description_de": "Eine scharfe Klinge aus dem Aschewald. Zuverlässig, aber unspektakulär."
+    },
+    {
+      "id": "item_w_bone_club",
+      "name_de": "Knochenknüppel",
+      "slot": "weapon",
+      "rarity": "common",
+      "base_stats": {
+        "attack": 4
+      },
+      "source": "lumen_well",
+      "affixes": [],
+      "description_de": "Schwer und einfach. Tut, was er soll."
+    },
+    {
+      "id": "item_w_rust_sword",
+      "name_de": "Rostschwert",
+      "slot": "weapon",
+      "rarity": "common",
+      "base_stats": {
+        "attack": 5
+      },
+      "source": "any",
+      "affixes": [],
+      "description_de": "Ein abgenutztes Schwert aus dem Brunnen-Schacht."
+    },
+    {
+      "id": "item_w_ember_knife",
+      "name_de": "Glutmessersplitter",
+      "slot": "weapon",
+      "rarity": "common",
+      "base_stats": {
+        "attack": 4,
+        "crit_chance": 2
+      },
+      "source": "glut_hoehlen",
+      "affixes": [],
+      "description_de": "Ein Messer, das noch nach Glut riecht."
+    },
+    {
+      "id": "item_w_frost_pike",
+      "name_de": "Frostspeer",
+      "slot": "weapon",
+      "rarity": "common",
+      "base_stats": {
+        "attack": 6
+      },
+      "source": "frost_hallen",
+      "affixes": [],
+      "description_de": "Langer Speer aus gefrorenem Lumen."
+    },
+    {
+      "id": "item_w_cracked_blade",
+      "name_de": "Rissklinge",
+      "slot": "weapon",
+      "rarity": "common",
+      "base_stats": {
+        "attack": 5
+      },
+      "source": "hohle_tiefen",
+      "affixes": [],
+      "description_de": "Eine Klinge mit feinen Rissen — hält noch."
+    },
+    {
+      "id": "item_w_lumen_daggers",
+      "name_de": "Lumendoppelmesser",
+      "slot": "weapon",
+      "rarity": "common",
+      "base_stats": {
+        "attack": 3,
+        "speed": 5
+      },
+      "source": "lumen_well",
+      "affixes": [],
+      "description_de": "Zwei leichte Messer, die im Dunkeln leuchten."
+    },
+    {
+      "id": "item_w_spore_mace",
+      "name_de": "Sporenkeule",
+      "slot": "weapon",
+      "rarity": "common",
+      "base_stats": {
+        "attack": 4,
+        "max_hp": 10
+      },
+      "source": "aschen_wald",
+      "affixes": [],
+      "description_de": "Mit leuchtenden Sporen überzogen; die Hülle schützt den Träger leicht."
+    },
+    {
+      "id": "item_w_iron_shortsword",
+      "name_de": "Eisenkurzsword",
+      "slot": "weapon",
+      "rarity": "common",
+      "base_stats": {
+        "attack": 6
+      },
+      "source": "any",
+      "affixes": [],
+      "description_de": "Solide Schmiedearbeit ohne Schnickschnack."
+    },
+    {
+      "id": "item_w_glowing_saber",
+      "name_de": "Leuchtende Säbelklinge",
+      "slot": "weapon",
+      "rarity": "uncommon",
+      "base_stats": {
+        "attack": 7,
+        "crit_chance": 3
+      },
+      "source": "lumen_well",
+      "affixes": [
+        "affix_keen_edge"
+      ],
+      "description_de": "Ein Säbel, dessen Klinge mit Lumen durchzogen ist."
+    },
+    {
+      "id": "item_w_cinder_blade",
+      "name_de": "Glutklinge",
+      "slot": "weapon",
+      "rarity": "uncommon",
+      "base_stats": {
+        "attack": 8,
+        "crit_damage": 5
+      },
+      "source": "glut_hoehlen",
+      "affixes": [
+        "affix_war_might"
+      ],
+      "description_de": "Geschmiedet in den Gluthöhlen; kritische Treffer glühen nach."
+    },
+    {
+      "id": "item_w_frostfang",
+      "name_de": "Frostrisszahn",
+      "slot": "weapon",
+      "rarity": "uncommon",
+      "base_stats": {
+        "attack": 7,
+        "speed": 5
+      },
+      "source": "frost_hallen",
+      "affixes": [
+        "affix_precise_strike"
+      ],
+      "description_de": "Ein Dolch aus dem Eis der Frosthallen — schnell und präzise."
+    },
+    {
+      "id": "item_w_ashen_greatsword",
+      "name_de": "Aschengroßschwert",
+      "slot": "weapon",
+      "rarity": "uncommon",
+      "base_stats": {
+        "attack": 9,
+        "max_hp": 10
+      },
+      "source": "aschen_wald",
+      "affixes": [
+        "affix_keen_edge",
+        "affix_vitality"
+      ],
+      "description_de": "Schwer, aber verlässlich; die Asche des Waldes hat es gehärtet."
+    },
+    {
+      "id": "item_w_lumen_reaver",
+      "name_de": "Lumenhauer",
+      "slot": "weapon",
+      "rarity": "rare",
+      "base_stats": {
+        "attack": 10,
+        "crit_chance": 5,
+        "crit_damage": 8
+      },
+      "source": "lumen_well",
+      "affixes": [
+        "affix_war_might",
+        "affix_precise_strike"
+      ],
+      "description_de": "Ein Schwert, das Lumen trinkt und es in Schlagkraft verwandelt."
+    },
+    {
+      "id": "item_w_hollow_edge",
+      "name_de": "Hohle Kante",
+      "slot": "weapon",
+      "rarity": "rare",
+      "base_stats": {
+        "attack": 9,
+        "speed": 8,
+        "lumen_gain": 3
+      },
+      "source": "hohle_tiefen",
+      "affixes": [
+        "affix_keen_edge",
+        "affix_wind_step",
+        "affix_lumen_hunger"
+      ],
+      "description_de": "Eine Klinge aus den Hohlen Tiefen; sie sammelt Lumen, das in ihr gefangen ist."
+    },
+    {
+      "id": "item_w_dawnbreaker",
+      "name_de": "Morgenbrecher",
+      "slot": "weapon",
+      "rarity": "epic",
+      "base_stats": {
+        "attack": 12,
+        "crit_chance": 5,
+        "crit_damage": 10,
+        "lumen_gain": 3
+      },
+      "source": "boss_aschen_waechter",
+      "affixes": [
+        "affix_war_might",
+        "affix_precise_strike",
+        "affix_deadly_focus"
+      ],
+      "description_de": "Die Waffe des Aschewächters. Jeder Tod bringt dich näher an den Kern — diese Klinge weiß es."
+    },
+    {
+      "id": "item_a_leather_vest",
+      "name_de": "Lederweste",
+      "slot": "armor",
+      "rarity": "common",
+      "base_stats": {
+        "max_hp": 15,
+        "defense": 2
+      },
+      "source": "any",
+      "affixes": [],
+      "description_de": "Gepolsterte Weste. Besser als nichts."
+    },
+    {
+      "id": "item_a_ashen_cloak",
+      "name_de": "Aschemantel",
+      "slot": "armor",
+      "rarity": "common",
+      "base_stats": {
+        "max_hp": 10,
+        "defense": 3
+      },
+      "source": "aschen_wald",
+      "affixes": [],
+      "description_de": "Ein Mantel aus Aschefasern; schützt vor Dornen und Sporen."
+    },
+    {
+      "id": "item_a_rust_plate",
+      "name_de": "Rostpanzerung",
+      "slot": "armor",
+      "rarity": "common",
+      "base_stats": {
+        "max_hp": 20,
+        "defense": 4
+      },
+      "source": "any",
+      "affixes": [],
+      "description_de": "Dicke Platten, die ihren Glanz verloren haben — aber noch halten."
+    },
+    {
+      "id": "item_a_spore_helm",
+      "name_de": "Sporenhelm",
+      "slot": "armor",
+      "rarity": "common",
+      "base_stats": {
+        "max_hp": 15,
+        "defense": 3
+      },
+      "source": "aschen_wald",
+      "affixes": [],
+      "description_de": "Ein Helm, in dem Sporen keimen; sie dämpfen Schläge."
+    },
+    {
+      "id": "item_a_ember_wrap",
+      "name_de": "Glutwickel",
+      "slot": "armor",
+      "rarity": "common",
+      "base_stats": {
+        "max_hp": 18,
+        "defense": 3
+      },
+      "source": "glut_hoehlen",
+      "affixes": [],
+      "description_de": "Hitzebeständige Wickel aus den Gluthöhlen."
+    },
+    {
+      "id": "item_a_frost_mail",
+      "name_de": "Frostrüstung",
+      "slot": "armor",
+      "rarity": "common",
+      "base_stats": {
+        "max_hp": 20,
+        "defense": 4
+      },
+      "source": "frost_hallen",
+      "affixes": [],
+      "description_de": "Kalt, aber zäh; die Kälte der Frosthallen hat sie gehärtet."
+    },
+    {
+      "id": "item_a_lumen_robes",
+      "name_de": "Lumengewänder",
+      "slot": "armor",
+      "rarity": "common",
+      "base_stats": {
+        "max_hp": 15,
+        "lumen_gain": 2
+      },
+      "source": "lumen_well",
+      "affixes": [],
+      "description_de": "Fließende Gewänder, die Lumen leiser einsammeln."
+    },
+    {
+      "id": "item_a_deep_hide",
+      "name_de": "Tiefenhaut",
+      "slot": "armor",
+      "rarity": "common",
+      "base_stats": {
+        "max_hp": 25,
+        "defense": 3
+      },
+      "source": "hohle_tiefen",
+      "affixes": [],
+      "description_de": "Die Haut eines Tieres aus den Hohlen Tiefen; dick und zäh."
+    },
+    {
+      "id": "item_a_glowing_cuirass",
+      "name_de": "Leuchtende Brustpanzerung",
+      "slot": "armor",
+      "rarity": "uncommon",
+      "base_stats": {
+        "max_hp": 30,
+        "defense": 6
+      },
+      "source": "lumen_well",
+      "affixes": [
+        "affix_ironhide"
+      ],
+      "description_de": "Eine Cuirass, durchzogen mit Lumenadern."
+    },
+    {
+      "id": "item_a_cinder_plate",
+      "name_de": "Glutpanzerung",
+      "slot": "armor",
+      "rarity": "uncommon",
+      "base_stats": {
+        "max_hp": 35,
+        "defense": 7
+      },
+      "source": "glut_hoehlen",
+      "affixes": [
+        "affix_vitality",
+        "affix_ironhide"
+      ],
+      "description_de": "Panzerplatten, die in der Glut gehärtet wurden."
+    },
+    {
+      "id": "item_a_frostguard",
+      "name_de": "Frosthüter",
+      "slot": "armor",
+      "rarity": "uncommon",
+      "base_stats": {
+        "max_hp": 30,
+        "defense": 8
+      },
+      "source": "frost_hallen",
+      "affixes": [
+        "affix_stone_skin"
+      ],
+      "description_de": "Vollpanzerung aus dem Eis der Frosthallen."
+    },
+    {
+      "id": "item_a_lumen_aurora",
+      "name_de": "Lumenaurore",
+      "slot": "armor",
+      "rarity": "rare",
+      "base_stats": {
+        "max_hp": 40,
+        "defense": 6,
+        "lumen_gain": 5
+      },
+      "source": "lumen_well",
+      "affixes": [
+        "affix_vitality",
+        "affix_ironhide",
+        "affix_lumen_hunger"
+      ],
+      "description_de": "Ein Gewand, das wie eine Polarlicht-Aurora schimmert; es speichert Lumen."
+    },
+    {
+      "id": "item_z_lumen_charm",
+      "name_de": "Lumenglied",
+      "slot": "accessory",
+      "rarity": "common",
+      "base_stats": {
+        "lumen_gain": 3
+      },
+      "source": "lumen_well",
+      "affixes": [],
+      "description_de": "Ein kleines Lumenstück an einer Kette; erhöht den Ertrag."
+    },
+    {
+      "id": "item_z_bone_ring",
+      "name_de": "Knochenring",
+      "slot": "accessory",
+      "rarity": "common",
+      "base_stats": {
+        "crit_chance": 2
+      },
+      "source": "any",
+      "affixes": [],
+      "description_de": "Ein Ring aus Knochen; scharf genug, um kritisch zu treffen."
+    },
+    {
+      "id": "item_z_ashen_amulet",
+      "name_de": "Aschamulett",
+      "slot": "accessory",
+      "rarity": "common",
+      "base_stats": {
+        "max_hp": 15
+      },
+      "source": "aschen_wald",
+      "affixes": [],
+      "description_de": "Ein Amulett aus verdichteter Asche; spendet Lebenskraft."
+    },
+    {
+      "id": "item_z_ember_stone",
+      "name_de": "Glutstein",
+      "slot": "accessory",
+      "rarity": "common",
+      "base_stats": {
+        "attack": 4
+      },
+      "source": "glut_hoehlen",
+      "affixes": [],
+      "description_de": "Ein Stein, der noch warm ist; verleiht Schlagkraft."
+    },
+    {
+      "id": "item_z_frost_pendant",
+      "name_de": "Frosthänger",
+      "slot": "accessory",
+      "rarity": "common",
+      "base_stats": {
+        "defense": 4
+      },
+      "source": "frost_hallen",
+      "affixes": [],
+      "description_de": "Ein gefrorener Anhänger; kühlt und schützt."
+    },
+    {
+      "id": "item_z_wind_boots",
+      "name_de": "Windstiefel",
+      "slot": "accessory",
+      "rarity": "common",
+      "base_stats": {
+        "speed": 8
+      },
+      "source": "any",
+      "affixes": [],
+      "description_de": "Leichte Stiefel, die das Laufen schneller machen."
+    },
+    {
+      "id": "item_z_deep_idol",
+      "name_de": "Tiefenidol",
+      "slot": "accessory",
+      "rarity": "common",
+      "base_stats": {
+        "max_hp": 20,
+        "lumen_gain": 1
+      },
+      "source": "hohle_tiefen",
+      "affixes": [],
+      "description_de": "Ein kleines Idol aus den Hohlen Tiefen; es flüstert von Lumen."
+    },
+    {
+      "id": "item_z_glowing_eye",
+      "name_de": "Leuchtendes Auge",
+      "slot": "accessory",
+      "rarity": "uncommon",
+      "base_stats": {
+        "crit_chance": 4,
+        "crit_damage": 5
+      },
+      "source": "lumen_well",
+      "affixes": [
+        "affix_precise_strike"
+      ],
+      "description_de": "Ein Auge, das im Dunkeln leuchtet; sieht Schwächen."
+    },
+    {
+      "id": "item_z_cinder_heart",
+      "name_de": "Glutherz",
+      "slot": "accessory",
+      "rarity": "uncommon",
+      "base_stats": {
+        "attack": 5,
+        "max_hp": 10
+      },
+      "source": "glut_hoehlen",
+      "affixes": [
+        "affix_war_might"
+      ],
+      "description_de": "Ein Herz aus Glut; schlägt schneller im Kampf."
+    },
+    {
+      "id": "item_z_wind_feather",
+      "name_de": "Windfeder",
+      "slot": "accessory",
+      "rarity": "uncommon",
+      "base_stats": {
+        "speed": 12
+      },
+      "source": "any",
+      "affixes": [
+        "affix_wind_step"
+      ],
+      "description_de": "Eine Feder, die den Wind einfängt."
+    },
+    {
+      "id": "item_z_lumen_core",
+      "name_de": "Lumenkern",
+      "slot": "accessory",
+      "rarity": "rare",
+      "base_stats": {
+        "lumen_gain": 6,
+        "crit_chance": 4
+      },
+      "source": "lumen_well",
+      "affixes": [
+        "affix_lumen_hunger",
+        "affix_precise_strike"
+      ],
+      "description_de": "Ein kondensierter Lumenkern; der Kern eines Run-Systems."
+    },
+    {
+      "id": "item_z_ice_crown",
+      "name_de": "Krone der Frostkönigin",
+      "slot": "accessory",
+      "rarity": "epic",
+      "base_stats": {
+        "max_hp": 25,
+        "crit_chance": 5,
+        "lumen_gain": 5
+      },
+      "source": "boss_frost_koenigin",
+      "affixes": [
+        "affix_vitality",
+        "affix_precise_strike",
+        "affix_lumen_hunger"
+      ],
+      "description_de": "Die Krone der Frostkönigin. Jeder, der sie trägt, gehört dem Kern."
+    }
+  ]
+}
