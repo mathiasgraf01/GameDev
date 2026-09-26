@@ -1,6 +1,6 @@
 # GDD — LUMENFALL (Arbeitstitel)
 
-**Version:** 0.2 | **Owner:** Designer (Leitung) | **Status:** T-002 abgenommen; T-003/T-004/T-005/T-006 in Arbeit
+**Version:** 0.3 | **Owner:** Designer (Leitung) | **Status:** T-002 + T-003 abgenommen; T-004/T-005/T-006 in Arbeit
 
 ## Ticket-Status
 
@@ -8,7 +8,7 @@
 |---|---|---|
 | T-001 GDD & Repo-Gerüst | designer | ✅ Abgeschlossen |
 | T-002 Raumgraph + Lore | worldbuilder | ✅ **Abgenommen** (QA 13/13 grün; 31 Nodes, 6 Gates, 4 Quest-Hooks verifiziert) |
-| T-003 Schemas + Balance | systems | 🔄 In Arbeit — Blocker für T-004-Balance-Teile |
+| T-003 Schemas + Balance | systems | ✅ **Abgenommen** (QA 20/20 Balance-Tests grün; 40 Items, Rarity exakt 60/25/10/5 %, Drop-Summen ≤ 1.0, Tiefe 1–5 monoton) |
 | T-004 Engine-Kern | coder | 🔄 In Arbeit (Daten-Layer gegen fertigen Graph; Balance-Teile warten auf T-003) |
 | T-005 Assets | artist | ⏳ Freigegeben — CONVENTIONS.md zuerst, dann Parallax/Sprites |
 | T-006 Playtest-Bot | qa | ⏳ Blockiert durch T-004 (Headless-Modus) |
