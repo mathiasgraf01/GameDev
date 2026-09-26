@@ -1,6 +1,6 @@
 # LUMENFALL — Lore-Bibel
 
-**Version:** 1.0 | **Owner:** worldbuilder (T-002) | **Status:** Freigegeben für T-004/T-005
+**Version:** 1.1 | **Owner:** worldbuilder (T-002) | **Status:** Freigegeben für T-004/T-005; §7 Feindtypen finalisiert (T-005 Deliverable 4)
 **Vertrag:** Alle Biome-, NPC- und Item-Namen in `world/map_graph.json` sind hier definiert. Neue Einträge erst nach Prüfung gegen diese Bibel ins Repo.
 
 ## 1. Grundmythos (Kanon)
@@ -62,3 +62,22 @@ Weitere Items (Waffen/Rüstung/Accessoires, ~30 Stück) definiert Systems in `ba
 2. Biome-IDs (`lumen_well`, `aschen_wald`, …) bleiben englische/snake_case-IDs; Anzeigennamen immer die deutschen aus dieser Bibel.
 3. Fähigkeit-/Schlüssel-IDs sind fix (Abschnitt 4). Umbenennung nur per Ticket vom Designer.
 4. Dialoge dürfen nie gegen das Map-Gating verstoßen: Ein NPC erwähnt ein Areal, das der Spieler noch nicht passieren kann, nur als *Ziel* („jenseits des Frosttors …"), nie als Ort, an dem man sich aufhalten kann.
+
+## 7. Feindtypen (kanonisch — T-005 Deliverable 4)
+
+Diese 8 IDs sind **final** und decken exakt die Zonenidentitäten aus §2 ab. Die Engine
+(`engine/enemies.py`) nutzt sie bereits als Archetyp-Tabelle; Umbenennung nur per Ticket vom Designer.
+Sprite-Pfad: `assets/enemies/<enemy_id>.png` (Größen nach `CONVENTIONS.md`).
+
+| ID | Name | Biome | Visuelle Identität & Verhalten |
+|---|---|---|---|
+| `enemy_spore_wisp` | **Sporenwisp** | Aschewald | Kleiner, schwebender Sporenball mit grüner Leuchtaura. Driftet langsam auf den Spieler zu; schwacher Nahangriff. Der „Grundton" des Waldes — häufigster Feind der ersten Zone. |
+| `enemy_ashen_stag` | **Aschhirsch** | Aschewald | Totholz-Hirsch mit aschgrauer Mähne und einem leuchtenden Sporenkern im Brustbein. Sprungangriff über kurze Distanz; auf Kronenpfaden (`ag_04`) besonders gefährlich, weil er den Spieler vom Pfad stößt. |
+| `enemy_cinder_imp` | **Glutimp** | Gluthöhlen | Kleiner, schneller Teufel aus glühender Schlacke mit Funken-Schwanz. Hüpft in Bögen und hinterlässt kurz brennende Bodenstellen; bevorzugt Klammbrücken (`ec_03`). |
+| `enemy_magma_golem` | **Magmagolem** | Gluthöhlen | Langsamer, schwerer Golem aus erkalteter Lava mit glühenden Rissen. Schwere Stampferangriffe mit kurzer Vorwarnung; blockt Klammgänge und zwingt zu Timing-Lücken. |
+| `enemy_frost_sentinel` | **Frostsentinelle** | Frosthallen | Panzerierter Wächter aus spiegelndem Eis, stehend in den Galerien (`fh_02`). Pariert Nahangriffe kurz; kontert mit einem Kälteimpuls. Stille Zone — keine Warn-Sounds, nur visuelle Vorwarnung. |
+| `enemy_ice_wraith` | **Eiswicht** | Frosthallen | Transluzenter Schatten in der Eiskathedrale (`fh_04`). Teleportiert kurze Distanzen und greift aus dem Hintergrund an; bei Treffer hinterlässt sie eine Eisfläche, die den Boden rutschig macht. |
+| `enemy_core_shade` | **Kernschatten** | Hohle Tiefen | Gestaltloser Schatten mit pulsierendem Lumenadern-Kern. Saugt langsam Lumen/HP über Zeit ab, solange der Spieler in Reichweite bleibt — Belohnung für Abstand halten; häufigster Feind der finalen Zone. |
+| `enemy_lumen_drake` | **Lumendrake** | Lumenbrunnen (Hub) | Kleiner, friedlich wirkender Lichtdrache, der den Brunnen bewacht. Greift nur an, wenn der Spieler zu nah an den Brunnenrand (`hub_01`) kommt — Tutorial-Gegner mit klaren i-Frame-Fenstern. |
+
+**Bosse** (separat, IDs aus `map_graph.json`): `boss_aschen_waechter`, `boss_frost_koenigin`.

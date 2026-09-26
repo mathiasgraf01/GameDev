@@ -283,3 +283,62 @@ def test_npc_and_boss_node_references(graph):
     node_ids = {n["id"] for n in graph["nodes"]}
     for npc in graph.get("npcs", []):
         assert npc["node"] in node_ids, f"NPC {npc['id']} steht in unbekanntem Node {npc['node']}"
+
+
+# ---------------------------------------------------------------------------
+# Feindtypen: lore.md §7 ist der kanonische Vertrag für T-005 Deliverable 4
+# ---------------------------------------------------------------------------
+
+LORE_PATH = Path(__file__).resolve().parent.parent / "world" / "lore.md"
+
+
+def _parse_lore_enemy_table() -> dict[str, str]:
+    """Liest die Feind-Tabelle aus lore.md §7: enemy_id -> biome-Name (de)."""
+    import re
+
+    text = LORE_PATH.read_text(encoding="utf-8")
+    section = text.split("## 7. Feindtypen", 1)
+    assert len(section) == 2, "lore.md enthält keine Sektion '## 7. Feindtypen'"
+    table_rows: dict[str, str] = {}
+    for line in section[1].splitlines():
+        m = re.match(r"^\|\s*`([a-z0-9_]+)`\s*\|[^|]*\|\s*([^|]+?)\s*\|", line)
+        if m and m.group(1).startswith("enemy_"):
+            table_rows[m.group(1)] = m.group(2)
+    return table_rows
+
+
+def test_lore_enemy_table_has_eight_types(graph):
+    """lore.md §7 definiert exakt 8 Feindtypen (GDD-Scope v1)."""
+    rows = _parse_lore_enemy_table()
+    assert len(rows) == 8, f"Erwarte 8 Feindtypen in lore.md §7, gefunden: {sorted(rows)}"
+
+
+def test_lore_enemies_match_engine_archetypes(graph):
+    """Die Feind-IDs aus lore.md §7 decken exakt die Engine-Archetypen ab (keine Drift)."""
+    from engine.enemies import ENEMY_ARCHETYPES
+
+    rows = _parse_lore_enemy_table()
+    assert set(rows) == set(ENEMY_ARCHETYPES), (
+        f"lore.md §7 und engine/enemies.py weichen ab: "
+        f"nur in lore={sorted(set(rows) - set(ENEMY_ARCHETYPES))}, "
+        f"nur in Engine={sorted(set(ENEMY_ARCHETYPES) - set(rows))}"
+    )
+
+
+def test_lore_enemies_biome_consistent(graph):
+    """Jeder Feind aus lore.md §7 gehört zu einem Biome, das im Graph existiert."""
+    import re
+
+    biome_names = {b["name_de"]: b["id"] for b in graph["biomes"]}
+    text = LORE_PATH.read_text(encoding="utf-8")
+    section = text.split("## 7. Feindtypen", 1)[1]
+    rows: list[tuple[str, str]] = []
+    for line in section.splitlines():
+        m = re.match(r"^\|\s*`([a-z0-9_]+)`\s*\|[^|]*\|\s*([^|]+?)\s*\|", line)
+        if m and m.group(1).startswith("enemy_"):
+            rows.append((m.group(1), m.group(2)))
+    assert rows, "Keine Feind-Zeilen in lore.md §7 gefunden"
+    for enemy_id, biome_cell in rows:
+        # Zellen wie "Lumenbrunnen (Hub)" → Namensteil vor der Klammer extrahieren.
+        name = re.split(r"\s*\(", biome_cell)[0].strip()
+        assert name in biome_names, f"Feind {enemy_id} referenziert unbekanntes Biome '{biome_cell}'"
