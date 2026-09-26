@@ -5,3 +5,5 @@ __pycache__/
 # T-004: Laufzeit-Artefakte (deterministisch, nicht committen)
 saves/
 reports/
+reports/
+saves/
