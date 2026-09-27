@@ -67,6 +67,8 @@ Fantasy in einem Satz: *Jeder Tod bringt dich näher an den Kern.*
 - **Datenantrieb:** Alle Spieldaten als JSON (world/, balance/). Der Code liest nur Schemas —
   keine hartkodeten Werte in der Engine.
 - **Tests:** pytest, headless (ohne Display lauffähig)
+- **Asset-Pipeline-Konvention (Team-Regel):** ComfyUI läuft IMMER auf GPU 1 (zweite A6000):
+  `--device cuda:1` bzw. `CUDA_VISIBLE_DEVICES=1`. Gilt für alle Profile (artist, systems, coder).
 
 ## 6. Repo-Struktur & Ownership
 
